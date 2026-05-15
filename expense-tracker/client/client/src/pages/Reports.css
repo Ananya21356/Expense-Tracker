@@ -1,0 +1,115 @@
+.report-filter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  margin-bottom: 20px;
+}
+
+.filter-icon {
+  color: var(--text-muted);
+  font-size: 18px;
+}
+
+.filter-select {
+  width: auto;
+  min-width: 130px;
+}
+
+.report-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.summary-card {
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  border: 1px solid var(--border);
+}
+
+.income-card {
+  background: var(--income-bg);
+  border-color: var(--income);
+}
+
+.expense-card {
+  background: var(--expense-bg);
+  border-color: var(--expense);
+}
+
+.savings-card {
+  background: var(--info-bg);
+  border-color: var(--info);
+}
+
+.summary-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  opacity: 0.7;
+}
+
+.income-card .summary-label { color: var(--income); }
+.expense-card .summary-label { color: var(--expense); }
+.savings-card .summary-label { color: var(--info); }
+
+.summary-value {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.income-card .summary-value { color: var(--income); }
+.expense-card .summary-value { color: var(--expense); }
+.savings-card .summary-value { color: var(--info); }
+
+.report-charts {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.breakdown-layout {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.breakdown-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.breakdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+}
+
+.breakdown-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.breakdown-cat {
+  flex: 1;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.breakdown-amount {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.breakdown-pct {
+  font-size: 12px;
+}
