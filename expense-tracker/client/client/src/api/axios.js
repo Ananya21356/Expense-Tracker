@@ -4,6 +4,8 @@ import axios from 'axios';
 // e.g. https://expense-tracker-api.onrender.com/api
 const baseURL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
+console.log('API Base URL:', baseURL);
+
 const api = axios.create({
   baseURL,
   withCredentials: true,

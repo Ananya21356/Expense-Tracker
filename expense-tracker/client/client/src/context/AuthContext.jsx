@@ -18,7 +18,10 @@ export const AuthProvider = ({ children }) => {
       localStorage.setItem('user', JSON.stringify(data));
       return { success: true };
     } catch (err) {
-      return { success: false, message: err.response?.data?.message || 'Login failed' };
+      console.error('Login error:', err);
+      console.error('Error response:', err.response);
+      const message = err.response?.data?.message || err.message || 'Login failed. Please check your connection.';
+      return { success: false, message };
     } finally {
       setLoading(false);
     }
@@ -32,7 +35,10 @@ export const AuthProvider = ({ children }) => {
       localStorage.setItem('user', JSON.stringify(data));
       return { success: true };
     } catch (err) {
-      return { success: false, message: err.response?.data?.message || 'Registration failed' };
+      console.error('Registration error:', err);
+      console.error('Error response:', err.response);
+      const message = err.response?.data?.message || err.message || 'Registration failed. Please check your connection.';
+      return { success: false, message };
     } finally {
       setLoading(false);
     }
