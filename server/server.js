@@ -46,6 +46,18 @@ app.get("/", (req, res) => {
   res.json({ message: "Expense Tracker API Running" });
 });
 
+// API health check
+app.get("/api", (req, res) => {
+  res.json({ 
+    message: "API is running",
+    endpoints: {
+      auth: "/api/auth (POST /register, POST /login, GET /profile, PUT /profile)",
+      transactions: "/api/transactions",
+      budgets: "/api/budgets"
+    }
+  });
+});
+
 // API Routes
 app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/transactions", require("./routes/transactionRoutes"));
