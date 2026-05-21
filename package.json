@@ -1,0 +1,10 @@
+{
+  "name": "expense-tracker-root",
+  "version": "1.0.0",
+  "description": "Smart Expense Tracker - Full Stack",
+  "scripts": {
+    "build": "npm install --prefix expense-tracker/client/client && npm run build --prefix expense-tracker/client/client",
+    "start": "npm start --prefix server",
+    "install-server": "npm install --prefix server"
+  }
+}
