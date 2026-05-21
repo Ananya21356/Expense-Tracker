@@ -10,12 +10,33 @@ connectDB();
 
 const app = express();
 
-// Allow all origins in production (frontend on Render Static Site)
+// CORS — allow frontend origins
+const allowedOrigins = [
+  "http://localhost:3000",
+  "http://localhost:5173",
+];
+
+// Add Render frontend URL if set
+if (process.env.CLIENT_URL) {
+  allowedOrigins.push(process.env.CLIENT_URL);
+}
+
 app.use(cors({
-  origin: process.env.CLIENT_URL
-    ? [process.env.CLIENT_URL, "http://localhost:3000", "http://localhost:5173"]
-    : "*",
+  origin: function (origin, callback) {
+    // Allow requests with no origin (mobile apps, curl, Postman)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+    // In production allow any render.com subdomain
+    if (process.env.NODE_ENV === "production" && origin.endsWith(".onrender.com")) {
+      return callback(null, true);
+    }
+    return callback(new Error("Not allowed by CORS"));
+  },
   credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
 }));
 
 app.use(express.json());
