@@ -1,5 +1,5 @@
 import { useAuth } from '../context/AuthContext';
-import { useApp } from '../context/AppContext';
+import { useApp } from '../context/useApp';
 import { MdMenu, MdNotifications, MdDarkMode, MdLightMode } from 'react-icons/md';
 import './Header.css';
 

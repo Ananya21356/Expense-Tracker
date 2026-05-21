@@ -53,7 +53,7 @@ const upsertBudget = async (req, res) => {
     const budget = await Budget.findOneAndUpdate(
       { user: req.user._id, category, month, year },
       { limit },
-      { upsert: true, new: true, setDefaultsOnInsert: true }
+      { upsert: true, returnDocument: 'after', setDefaultsOnInsert: true }
     );
     res.status(201).json(budget);
   } catch (error) {

@@ -2,7 +2,7 @@ import { createContext, useContext, useState, useEffect, useCallback } from 'rea
 import api from '../api/axios';
 import { useAuth } from './AuthContext';
 
-const AppContext = createContext();
+export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
   const { user } = useAuth();
@@ -117,5 +117,3 @@ export const AppProvider = ({ children }) => {
     </AppContext.Provider>
   );
 };
-
-export const useApp = () => useContext(AppContext);

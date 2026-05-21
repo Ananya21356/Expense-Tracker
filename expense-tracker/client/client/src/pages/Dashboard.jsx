@@ -1,4 +1,4 @@
-import { useApp } from '../context/AppContext';
+import { useApp } from '../context/useApp';
 import { useAuth } from '../context/AuthContext';
 import Header from '../components/Header';
 import {

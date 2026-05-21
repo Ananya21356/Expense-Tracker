@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
-import { useApp } from '../context/AppContext';
+import { useApp } from '../context/useApp';
 import Header from '../components/Header';
 import {
   MdPerson, MdLock, MdCurrencyRupee, MdNotifications,

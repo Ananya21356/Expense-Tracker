@@ -1,4 +1,4 @@
-import { useApp } from '../context/AppContext';
+import { useApp } from '../context/useApp';
 import Header from '../components/Header';
 import './Categories.css';
 

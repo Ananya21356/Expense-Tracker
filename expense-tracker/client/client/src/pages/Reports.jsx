@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useApp } from '../context/AppContext';
+import { useApp } from '../context/useApp';
 import Header from '../components/Header';
 import {
   PieChart, Pie, Cell, Tooltip, ResponsiveContainer, Legend

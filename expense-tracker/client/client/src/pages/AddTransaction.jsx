@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useApp } from '../context/AppContext';
+import { useApp } from '../context/useApp';
 import Header from '../components/Header';
 import { MdArrowBack } from 'react-icons/md';
 import './AddTransaction.css';

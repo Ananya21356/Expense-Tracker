@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useApp } from '../context/AppContext';
+import { useApp } from '../context/useApp';
 import Header from '../components/Header';
 import { MdAdd, MdDelete } from 'react-icons/md';
 import './Budgets.css';
